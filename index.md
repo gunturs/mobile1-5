@@ -115,5 +115,8 @@ class _Angka extends State<Angka> {
 
 ```
 menuliskan class StatefulWidget diawai dengan Underscor ( _ ) Contoh:  _Angka
+
 fungsi setState() yang akan bertugas untuk memberitahu widget bahwa ada object yang berubah pada State, sehingga akan melakukan build ulang pada Widget tersebut.
+
 fungsi setState() tidak berlaku pada StetelessWidget
+
