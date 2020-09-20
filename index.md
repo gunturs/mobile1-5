@@ -3,7 +3,8 @@
 Sebelumnya kita harus memahami bahwa dalam membuat interface dengan Flutter, semua komponen yang kita pakai disebut dengan Widget, Widget memiliki dua tipe yaitu Stateful dan Stateless.
 
 >## Stateless Widget
-Merupakan widget yang di-build hanya dengan konfigurasi yang telah diinisiasi sejak awal. Jadi Stateless Widget adalah Widget yang tidak akan pernah berubah. Contoh dan tugas yang sudah kita gunakan pada pertemuan 1-4 kita sudah menggunakan Stateless Widget 
+
+Merupakan widget yang di-build hanya dengan konfigurasi yang telah diinisiasi sejak awal. Jadi Stateless Widget adalah Widget yang tidak akan pernah berubah. Contoh dan tugas yang sudah kita gunakan pada pertemuan 1-4 merupakan penereapan dari Stateless Widget 
 
 
 You can use the [editor on GitHub](https://github.com/gunturs/mobile1-5/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
