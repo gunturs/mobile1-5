@@ -26,6 +26,69 @@ class MyApp extends StatelessWidget {
     }
 }
 ```
+Pada program diatas hasilnya menampilkan angka 10,  dan nilai 10 itu tidak akan bisa dirubah karena menggunkan stateless Widget
+
+>## Stateful Widget
+
+Stateful Widget merupakan widget yang dinamis atau dapat berubah. Berbanding terbalik dengan stateless, stateful widget dapat mengupdate tampilan, merubah warna, menambah jumlah baris dll. 
+Perhatikan contoh berikut, kita akan membuat program pada contoh diatas menjadi dinamis sehingga dapat meribah nilai angka ketika kita klick sesuatu dalam contoh ini sebuah tombol floating.
+
+```dart
+class MyApp extends StatelessWidget {
+    @override
+    Widget build(BuildContext context) {
+        return Scaffold(
+            appBar: AppBar(
+                title: Text('ExampleApp'),
+            ),
+            body: Container(
+                child: NumberScreen(),
+            )
+        );
+    }
+}
+
+class NumberScreen extends StatefulWidget {
+  @override
+  _NumberScreenState createState() => _NumberScreenState();
+}
+
+class _NumberScreenState extends State<NumberScreen> {
+    int number = 10;
+
+    @override
+    Widget build(BuildContext context) {
+        return Stack(
+            children: <Widget>[
+                Center(
+                    child: Text(
+                        this.number.toString(),
+                        style: TextStyle(
+                            fontSize: 30
+                        ),
+                    ),
+                ),
+                Positioned(
+                    bottom: 50,
+                    right: 50,
+                    child: FloatingActionButton(
+                        child: Icon(Icons.plus_one),
+                        onPressed: () {
+                            setState(() {
+                                this.number += 1;
+                            });
+                        },
+                    ),
+                )
+            ],
+        );
+    }
+}
+
+```
+
+
+
 
 You can use the [editor on GitHub](https://github.com/gunturs/mobile1-5/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
