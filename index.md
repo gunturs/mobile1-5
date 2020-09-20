@@ -6,6 +6,26 @@ Sebelumnya kita harus memahami bahwa dalam membuat interface dengan Flutter, sem
 
 Merupakan widget yang di-build hanya dengan konfigurasi yang telah diinisiasi sejak awal. Jadi Stateless Widget adalah Widget yang tidak akan pernah berubah. Contoh dan tugas yang sudah kita gunakan pada pertemuan 1-4 merupakan penereapan dari Stateless Widget 
 
+```dart
+class MyApp extends StatelessWidget {
+    @override
+    Widget build(BuildContext context) {
+        return Scaffold(
+            appBar: AppBar(
+                title: Text('ExampleApp'),
+            ),
+            body: Center(
+                child: Text(
+                    '10',
+                    style: TextStyle(
+                        fontSize: 30
+                    ),
+                ),
+            )
+        );
+    }
+}
+```
 
 You can use the [editor on GitHub](https://github.com/gunturs/mobile1-5/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
