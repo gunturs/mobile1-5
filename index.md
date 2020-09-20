@@ -35,57 +35,85 @@ Perhatikan contoh berikut, kita akan membuat program pada contoh diatas menjadi 
 
 ```dart
 class MyApp extends StatelessWidget {
-    @override
-    Widget build(BuildContext context) {
-        return Scaffold(
-            appBar: AppBar(
-                title: Text('ExampleApp'),
-            ),
-            body: Container(
-                child: NumberScreen(),
-            )
-        );
-    }
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Contoh Statefull Widget'),
+        ),
+        body: Angka(),
+      ),
+    );
+  }
 }
 
-class NumberScreen extends StatefulWidget {
+class Angka extends StatefulWidget {
+  _Angka createState() => _Angka();
+}
+
+class _Angka extends State<Angka> {
+  int _number = 10;
+  
+  //Hitung Tambah
+  
+  void _tambah(){
+    setState((){
+      _number++;
+    });
+  }
+  
+  //Hitung kurang
+  
+  void _kurang(){
+    setState((){
+      _number--;
+    });
+  }
+    
+
   @override
-  _NumberScreenState createState() => _NumberScreenState();
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: new Stack(
+          children: <Widget>[
+            new Center(
+              child: new Text(
+                '$_number',
+                style: TextStyle(fontSize: 30),
+              ),
+            ),
+            
+            //Program untuk tombol tembah
+            new Positioned(
+              bottom:100,
+              right: 10,
+              child: new FloatingActionButton(
+                child: Icon(Icons.add),
+                backgroundColor: Colors.green,
+                onPressed: _tambah,
+              ),
+            ),
+            //Program untuk Tombol Kurang
+            new Positioned(
+              bottom:40,
+              right: 10,
+              child: new FloatingActionButton(
+                child: Icon(Icons.remove),
+                backgroundColor: Colors.red,
+                onPressed: _kurang,
+              ),
+            ),
+            
+          ],
+        ),
+      ),
+    );
+  }
 }
 
-class _NumberScreenState extends State<NumberScreen> {
-    int number = 10;
-
-    @override
-    Widget build(BuildContext context) {
-        return Stack(
-            children: <Widget>[
-                Center(
-                    child: Text(
-                        this.number.toString(),
-                        style: TextStyle(
-                            fontSize: 30
-                        ),
-                    ),
-                ),
-                Positioned(
-                    bottom: 50,
-                    right: 50,
-                    child: FloatingActionButton(
-                        child: Icon(Icons.plus_one),
-                        onPressed: () {
-                            setState(() {
-                                this.number += 1;
-                            });
-                        },
-                    ),
-                )
-            ],
-        );
-    }
-}
 
 ```
-menuliskan class StatefulWidget diawai dengan Underscor ( _ ) Contoh:  _NumberScreenState
+menuliskan class StatefulWidget diawai dengan Underscor ( _ ) Contoh:  _Angka
 fungsi setState() yang akan bertugas untuk memberitahu widget bahwa ada object yang berubah pada State, sehingga akan melakukan build ulang pada Widget tersebut.
 fungsi setState() tidak berlaku pada StetelessWidget
