@@ -8,22 +8,19 @@ Merupakan widget yang di-build hanya dengan konfigurasi yang telah diinisiasi se
 
 ```dart
 class MyApp extends StatelessWidget {
-    @override
-    Widget build(BuildContext context) {
-        return Scaffold(
-            appBar: AppBar(
-                title: Text('ExampleApp'),
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: new Scaffold(
+          appBar: AppBar(),
+          body: Center(
+            child: Text(
+              '10',
+              style: TextStyle(fontSize: 30),
             ),
-            body: Center(
-                child: Text(
-                    '10',
-                    style: TextStyle(
-                        fontSize: 30
-                    ),
-                ),
-            )
-        );
-    }
+          )),
+    );
+  }
 }
 ```
 Pada program diatas hasilnya menampilkan angka 10,  dan nilai 10 itu tidak akan bisa dirubah karena menggunkan stateless Widget
